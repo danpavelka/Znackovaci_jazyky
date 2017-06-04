@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="specifikace_vozidla.xsl"?>
+<specifikace_vozidla> <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="specifikace_vozidla.xsd">-->
+<vozidlo>
+    <Vyrobce>Skoda</Vyrobce>
+    <Typ>
+        <jmeno>Octavia</jmeno>
+        <typ_karoserie>Sedan</typ_karoserie>
+        <material_karoserie>Hlinik</material_karoserie>
+        <vyska_vozidla jednotky="mm">1461</vyska_vozidla>
+        <sirka_vozidla jednotky="mm">2017</sirka_vozidla>
+        <delka_vozidla jednotky="mm">4659</delka_vozidla>
+        <rozvor_naprav jednotky="mm">2686</rozvor_naprav>
+        <objem_kufru jednotky="l">590/1580</objem_kufru>
+        <hmotnost jednotky="kg">1342</hmotnost>
+        <barva>Modra</barva>
+        <typ_barvy oznaceni_barvy="race">Metaliza</typ_barvy>
+    </Typ>
+       
+    <Pohonne_hmoty>
+        <palivo doporucene="oktanove cislo min. 95">Benzin</palivo>
+        <spotreba jednotky="l/100km">5,9</spotreba>
+        <objem_nadrze jednotky="l">50</objem_nadrze>
+    </Pohonne_hmoty>
+    
+    <Motor>
+        <druh>Zazehovy</druh>
+        <oznaceni>TSI</oznaceni>
+        <objem jednotky="cm^3">1798</objem>
+        <pocet__valcu>4</pocet__valcu>
+        <max_vykon jednotky="kW">132</max_vykon>
+        <max_otacky>5100-6200</max_otacky>
+        <max_tocivy_moment jednotky="nM">250</max_tocivy_moment>
+        <exhalacni_norma>EU6</exhalacni_norma>
+        <emise jednotky="g/km">136</emise>
+        <max_rychlost jednotky="km/h">229</max_rychlost>
+        <zrychleni rozmezi="0-100km/h">7,3</zrychleni>
+        <pocet_stupnu typ_prevodovky="manualni">6</pocet_stupnu>
+        <spojka typ_ovladani="hydraulicky">Jednokotoucova</spojka>
+        <nahon pocet_pohanenych_kol="2">Predni kola</nahon>        
+    </Motor>
+    
+    <Vybava>
+        
+    </Vybava>
+    
+    <Brzdy>
+        
+    </Brzdy>
+    
+    <Kola>
+        
+    </Kola>
+    
+    <Cenik>
+        
+    </Cenik>
+    
+    <Zapujceni>
+        
+    </Zapujceni>
+    
+    <Dodatecne_informace>
+        
+    </Dodatecne_informace>
+    
+</vozidlo>
+</specifikace_vozidla>    

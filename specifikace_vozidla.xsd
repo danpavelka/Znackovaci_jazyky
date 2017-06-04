@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="pujcovna_vozidel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="vozidlo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vozidlo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Vyrobce"/>
+        <xs:element ref="Typ"/>
+        <xs:element ref="Pohonne_hmoty"/>
+        <xs:element ref="Motor"/>
+        <xs:element ref="Vybava"/>
+        <xs:element ref="Brzdy"/>
+        <xs:element ref="Kola"/>
+        <xs:element ref="Cenik"/>
+        <xs:element ref="Zapujceni"/>
+        <xs:element ref="Dodatecne_informace"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vyrobce" type="xs:NCName"/>
+  <xs:element name="Typ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="jmeno"/>
+        <xs:element ref="typ_karoserie"/>
+        <xs:element ref="material_karoserie"/>
+        <xs:element ref="vyska_vozidla"/>
+        <xs:element ref="sirka_vozidla"/>
+        <xs:element ref="delka_vozidla"/>
+        <xs:element ref="rozvor_naprav"/>
+        <xs:element ref="objem_kufru"/>
+        <xs:element ref="hmotnost"/>
+        <xs:element ref="barva"/>
+        <xs:element ref="typ_barvy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jmeno" type="xs:NCName"/>
+  <xs:element name="typ_karoserie" type="xs:NCName"/>
+  <xs:element name="material_karoserie" type="xs:NCName"/>
+  <xs:element name="vyska_vozidla">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sirka_vozidla">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delka_vozidla">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rozvor_naprav">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="objem_kufru">
+    <xs:complexType mixed="true">
+      <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hmotnost">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="barva" type="xs:NCName"/>
+  <xs:element name="typ_barvy">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="oznaceni_barvy" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Pohonne_hmoty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="palivo"/>
+        <xs:element ref="spotreba"/>
+        <xs:element ref="objem_nadrze"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="palivo">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="doporucene" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spotreba">
+    <xs:complexType mixed="true">
+      <xs:attribute name="jednotky" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="objem_nadrze">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Motor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="druh"/>
+        <xs:element ref="oznaceni"/>
+        <xs:element ref="objem"/>
+        <xs:element ref="pocet__valcu"/>
+        <xs:element ref="max_vykon"/>
+        <xs:element ref="max_otacky"/>
+        <xs:element ref="max_tocivy_moment"/>
+        <xs:element ref="exhalacni_norma"/>
+        <xs:element ref="emise"/>
+        <xs:element ref="max_rychlost"/>
+        <xs:element ref="zrychleni"/>
+        <xs:element ref="pocet_stupnu"/>
+        <xs:element ref="spojka"/>
+        <xs:element ref="nahon"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="druh" type="xs:NCName"/>
+  <xs:element name="oznaceni" type="xs:NCName"/>
+  <xs:element name="objem">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pocet__valcu" type="xs:integer"/>
+  <xs:element name="max_vykon">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="max_otacky" type="xs:NMTOKEN"/>
+  <xs:element name="max_tocivy_moment">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="exhalacni_norma" type="xs:NCName"/>
+  <xs:element name="emise">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="max_rychlost">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="zrychleni">
+    <xs:complexType mixed="true">
+      <xs:attribute name="rozmezi" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pocet_stupnu">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="typ_prevodovky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spojka">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="typ_ovladani" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nahon">
+    <xs:complexType mixed="true">
+      <xs:attribute name="pocet_pohanenych_kol" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vybava">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Brzdy">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Kola">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Cenik">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Zapujceni">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Dodatecne_informace">
+    <xs:complexType/>
+  </xs:element>
+</xs:schema>
