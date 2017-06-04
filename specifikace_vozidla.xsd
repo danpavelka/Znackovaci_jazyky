@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="specifikace_vozidla">
-    <xs:complexType>
+    <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:element ref="vozidlo"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="vozidlo"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -22,7 +22,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Vyrobce" type="xs:NCName"/>
+  <xs:element name="Vyrobce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="znacka"/>
+        <xs:element ref="koncern"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="znacka" type="xs:NCName"/>
+  <xs:element name="koncern" type="xs:NCName"/>
   <xs:element name="Typ">
     <xs:complexType>
       <xs:sequence>
@@ -305,16 +314,33 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="typ_brzd"/>
+        <xs:element ref="disku_na_kolo"/>
+        <xs:element ref="posilovac"/>
+        <xs:element ref="trmeny"/>
+        <xs:element ref="propojeni"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="typ_brzd" type="xs:NCName"/>
+  <xs:element name="disku_na_kolo" type="xs:integer"/>
+  <xs:element name="posilovac">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="typ" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trmeny" type="xs:NCName"/>
+  <xs:element name="propojeni" type="xs:NCName"/>
   <xs:element name="Kola">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="standardni_kola"/>
         <xs:element ref="nadstandardni_kola"/>
         <xs:element ref="material"/>
+        <xs:element ref="pouzivany_rozmer"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -337,6 +363,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="material" type="xs:string"/>
+  <xs:element name="pouzivany_rozmer" type="xs:integer"/>
   <xs:element name="Cenik">
     <xs:complexType>
       <xs:sequence>
@@ -383,7 +410,8 @@
         <xs:element ref="ujeto"/>
         <xs:element ref="rok_vyroby"/>
         <xs:element ref="bourano"/>
-        <xs:element ref="osobni_vlastnictvi"/>
+        <xs:element ref="osobni_sluzebni"/>
+        <xs:element ref="spravce"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -398,5 +426,6 @@
   </xs:element>
   <xs:element name="rok_vyroby" type="xs:integer"/>
   <xs:element name="bourano" type="xs:NCName"/>
-  <xs:element name="osobni_vlastnictvi" type="xs:NCName"/>
+  <xs:element name="osobni_sluzebni" type="xs:NCName"/>
+  <xs:element name="spravce" type="xs:string"/>
 </xs:schema>

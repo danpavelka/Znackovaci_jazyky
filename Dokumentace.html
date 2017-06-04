@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Značkovací jazyky - Dokumentace projektu</title>
+    </head>
+    <body>
+        <header>
+            <h1>Dokumentace k projektu Specifikace vozidla předmětu Značkovací jazyky na PEF ČZU</h1>
+        </header>
+        
+        <nav id="menu">
+            <h2 style="text-decoration:bold;">Obsah</h2>
+            <ul>
+                <li><a href="#uvod" style="text-decoration:none">Úvod</a></li>
+                <li><a href="#metodika" style="text-decoration:none">Metodika</a></li>
+                <li><a href="#popis" style="text-decoration:none">Popis</a></li>
+                <li><a href="#elementy" style="text-decoration:none">Elementy</a></li>
+                <li><a href="#zaver" style="text-decoration:none">Závěr</a></li>    
+                
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <section id="uvod">
+                    <h2 style="text-decoration:bold;">Úvod</h2> 
+                    <p>Semestrálním projektem předmětu Značkovací jazyky bylo vytvoření XML souboru s definovanou databází a jeho následnou transformaci do formátu XSL, XSD soubor obsahující schéma a HTML souboru obsahující dokumentaci</p>
+                    <p>Téma specifikace vozidla jsem si vymyslel kvůli jeho možnému využití ve firemní infrastruktuře. </p>
+                </section>
+                <section id="metodika">
+                    <h2 style="text-decoration:bold;">Metodika</h2>  
+                    <p>Pro vytvoření XML souboru jsem použil <a href="https://www.oxygenxml.com/">oXygen XML editor</a> s trial licencí. Ten mi dovolil i následné vytvoření XSD schématu.</p>
+                    <p>Transformace do souboru XSL byla také zpracována ve výše zmíněném <a href="https://www.oxygenxml.com/">programu</a> a dále zkontrolována na správnost v portálu <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&xsltfile=cdcatalog">w3schools</a>.    </p>
+                </section>
+                <section id="popis">
+                    <h2 style="text-decoration:bold;">Popis</h2> 
+                    <p>V projektu jsem se zaměřil na vybrané aspekty technické specifikace vozidel a použil jeden automobil jako výchozí šablonu pro přidání jiných vozidel.</p>
+                    <p>K získání naprosté většiny informací jsem využil online zdrojů výrobce <a href="http://www.skoda-auto.cz/SiteCollectionDocuments/skoda-auto/ke-stazeni/octavia-katalog.pdf">Katalog Octavia</a> a <a href="http://cc-cloud.skoda-auto.com/cze/cze/cs-cz">Online konfigurátor Škody</a>.</p>
+                </section>
+                <section id="elementy">
+                    <h2 style="text-decoration:bold;">Elementy</h2> 
+                    <p>V následujících tabulkách jsou v h3 nadpisu vyjmenovány jednotlivé hlavní elementy. V tabulkách jsou pak vypsány jejich jednotliví potomci, a co který obsahuje za data</p>
+                    <caption><h3>Vyrobce</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>znacka</td>
+                            <td>Jaké značky je vůz</td>
+                        </tr>
+                        <tr>
+                            <td>koncern</td>
+                            <td>Pod jaký koncern spadá značka vozu</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Typ</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>jmeno</td>
+                            <td>Název automobilu</td>
+                        </tr>
+                        <tr>
+                            <td>typ_karoserie</td>
+                            <td>Popis, zda se jedná o sedan/combi/hatchback/atd.</td>
+                        </tr>
+                        <tr>
+                            <td>material_karoserie</td>
+                            <td>Z jakého materiálu je karoserie vyrobena</td>
+                        </tr>
+                        <tr>
+                            <td>vyska_vozidla</td>
+                            <td>Výška vozidla v milimetrech</td>
+                        </tr>
+                        <tr>
+                            <td>sirka_vozidla</td>
+                            <td>Šířka vozidla v milimetrech</td>
+                        </tr>
+                        <tr>
+                            <td>delka_vozidla</td>
+                            <td>Délka vozidla v milimetrech</td>
+                        </tr>
+                        <tr>
+                            <td>rozvor_naprav</td>
+                            <td>Rozvor náprav v milimetrech</td>
+                        </tr>
+                        <tr>
+                            <td>objem_kufru</td>
+                            <td>Objem kufru v litrech před a po sklopení zadních sedaček</td>
+                        </tr>
+                        <tr>
+                            <td>hmotnost</td>
+                            <td>Hmotnost vozidla se 75kg řidičem udávaná v kilogramech</td>
+                        </tr>
+                        <tr>
+                            <td>barva</td>
+                            <td>Popis barvy vozidla</td>
+                        </tr>
+                        <tr>
+                            <td>typ_barvy</td>
+                            <td>Popis zda se jedná o metalízu, či jiné druhy barev a laků s označením od výrobce</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Pohonne_hmoty</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>palivo</td>
+                            <td>Informace o používaném palivu a doporučení oktanového čísla</td>
+                        </tr>
+                        <tr>
+                            <td>spotreba</td>
+                            <td>Spotřeba udávaná v litrech na 100 kilometrů</td>
+                        </tr>
+                        <tr>
+                            <td>objem_nadrze</td>
+                            <td>Kolik vozidlo pojme litrů pohonných hmot</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Motor</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>znacka</td>
+                            <td>Jaké značky je vůz</td>
+                        </tr>
+                        <tr>
+                            <td>druh</td>
+                            <td>Informace o druhu motoru - zážehový/vznětový/elektrický/hybrid atd.</td>
+                        </tr>
+                        <tr>
+                            <td>oznaceni</td>
+                            <td>Používaná technologie motoru - TSI/CRDI/atd.</td>
+                        </tr>
+                        <tr>
+                            <td>objem</td>
+                            <td>Objem motoru udávaný v kubických centimetrech</td>
+                        </tr>
+                        <tr>
+                            <td>pocet__valcu</td>
+                            <td>Počet válců v motoru</td>
+                        </tr>
+                        <tr>
+                            <td>max_vykon</td>
+                            <td>Maximální výkon motoru udávaný v kilowattech </td>
+                        </tr>
+                        <tr>
+                            <td>max_otacky</td>
+                            <td>Maximální otáčky motoru za minutu</td>
+                        </tr>
+                        <tr>
+                            <td>max_tocivy_moment</td>
+                            <td>Maximální točivý moment motoru udávaný v newtonmetrech </td>
+                        </tr>
+                        <tr>
+                            <td>exhalacni_norma</td>
+                            <td>Exhalační norma motoru</td>
+                        </tr>
+                        <tr>
+                            <td>emise</td>
+                            <td>Kolik motor vyprodukuje splodin udávané v gramech na kilometr</td>
+                        </tr>
+                        <tr>
+                            <td>max_rychlost</td>
+                            <td>Maximální dosažitelná rychlost vozidla v kilometrech na hodinu</td>
+                        </tr>
+                        <tr>
+                            <td>zrychleni</td>
+                            <td>Zrychlení z 0 na 100 km/h udávané v sekundách</td>
+                        </tr>
+                        <tr>
+                            <td>pocet_stupnu</td>
+                            <td>Počet stupňů převodovky s jejím typem jako atributem</td>
+                        </tr>
+                        <tr>
+                            <td>spojka</td>
+                            <td>Specifikace stavby a ovládání spojky</td>
+                        </tr>
+                        <tr>
+                            <td>nahon</td>
+                            <td>Informace ohledně pohonu na přední/zadní/všechna 4 kola</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Vybava</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>typ_vybavy</td>
+                            <td>Typ výbavy udávaný výrobcem</td>
+                        </tr>
+                        <tr>
+                            <td>barva_interieru</td>
+                            <td>Barva interiéru</td>
+                        </tr>
+                        <tr>
+                            <td>signalizace_pri_parkovani</td>
+                            <td>Informace, zda vozidlo má zabudovanou funkci signalizace při parkování</td>
+                        </tr>
+                        <tr>
+                            <td>klimatizace</td>
+                            <td>Informace o klimatizaci vozidla</td>
+                        </tr>
+                        <tr>
+                            <td>tempomat</td>
+                            <td>Informace, zda vozidlo má zabudovanou funkci</td>
+                        </tr>
+                        <tr>
+                            <td>vyhrivani_sedadel</td>
+                            <td>Informace, zda a jaká má vozidlo vyhřívaná sedadla</td>
+                        </tr>
+                        <tr>
+                            <td>typ_svetlometu</td>
+                            <td>Informace o typu světlometu - LED/žárovky/halogeny atd.</td>
+                        </tr>
+                        <tr>
+                            <td>autoradio</td>
+                            <td>Informace, zda vozidlo má autorádio</td>
+                        </tr>
+                        <tr>
+                            <td>palubni_pocitac</td>
+                            <td>Informace, zda vozidlo má palubní počítač</td>
+                        </tr>
+                        <tr>
+                            <td>abs</td>
+                            <td>Informace, zda vozidlo má zabudovanou funkci ABS</td>
+                        </tr>
+                        <tr>
+                            <td>asr</td>
+                            <td>Informace, zda vozidlo má zabudovanou funkci ASR</td>
+                        </tr>
+                        <tr>
+                            <td>esp</td>
+                            <td>Informace, zda vozidlo má zabudovanou funkci ESP</td>
+                        </tr>
+                        <tr>
+                            <td>tazne_zarizeni</td>
+                            <td>Informace, zda má vozidlo tažné zařízení na vlek</td>
+                        </tr>
+                        <tr>
+                            <td>mlhovky</td>
+                            <td>Informace, zda má vozidlo dokoupené mlhové světla</td>
+                        </tr>
+                        <tr>
+                            <td>lane_assist</td>
+                            <td>Informace zda má vozidlo zabudovanou funkci pomoci řízení mezi čárami</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Brzdy</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>typ_brzd</td>
+                            <td>Určení typu brzd zda jsou kotoučové, bubnové nebo jiné</td>
+                        </tr>
+                        <tr>
+                            <td>disku_na_kolo</td>
+                            <td>V případě, že jsou brzdy kotoučové, obsahuje informaci o počtu brzdových koutoučů na kolo</td>
+                        </tr>
+                        <tr>
+                            <td>posilovac</td>
+                            <td>Údaje o druhu posilovače a jeho typu</td>
+                        </tr>
+                        <tr>
+                            <td>trmeny</td>
+                            <td>Údaje o použitých brzdových třmenech</td>
+                        </tr>
+                        <tr>
+                            <td>propojeni</td>
+                            <td>Propojení brzd</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Kola</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>standardni_kola</td>
+                            <td>Informace, zda vozidlo používá standardní kola a jejich rozměr</td>
+                        </tr>
+                        <tr>
+                            <td>nadstandardni_kola</td>
+                            <td>Informace, zda byla zakoupena nadstandardní kola a jejich rozměr</td>
+                        </tr>
+                        <tr>
+                            <td>material</td>
+                            <td>Materiál, ze kterého byly kola vyrobeny</td>
+                        </tr>
+                        <tr>
+                            <td>pouzivany_rozmer</td>
+                            <td>Rozměr momentálně používaných kol na vozidle</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Cenik</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>celkova_cena</td>
+                            <td>Cena automobilu udávaná v CZK</td>
+                        </tr>
+                        <tr>
+                            <td>cena_nadstandardni_vybavy</td>
+                            <td>Cena veškeré nadstandardní výbavy vozidla udávaná v CZK</td>
+                        </tr>
+                        <tr>
+                            <td>cena_metalicke_barvy</td>
+                            <td>Cena použité nadstandardní metalické či jiné barvy/laku udávaná v CZK</td>
+                        </tr>
+                        <tr>
+                            <td>cena_kol</td>
+                            <td>Cena nadstandardních kol udávaná v CZK</td>
+                        </tr>
+                        <tr>
+                            <td>na_splatky</td>
+                            <td>Informace zda byl vůz zakoupen na zplátky</td>
+                        </tr>
+                    </table>
+                    
+                    <caption><h3>Dodatecne_informace</h3></caption>
+                    <table border 2>
+                        <tr>
+                            <th>Element</th>
+                            <th>Popis elementu</th>
+                        </tr>
+                        <tr>
+                            <td>ujeto</td>
+                            <td>Počet ujetých kilometrů</td>
+                        </tr>
+                        <tr>
+                            <td>rok_vyroby</td>
+                            <td>Rok výroby vozidla</td>
+                        </tr>
+                        <tr>
+                            <td>bourano</td>
+                            <td>Informace, zda bylo vozidlo účastníkem nehody</td>
+                        </tr>
+                        <tr>
+                            <td>osobni_sluzebni</td>
+                            <td>Informace zda je auto používáno jako osobní nebo služební</td>
+                        </tr>
+                        <tr>
+                            <td>spravce</td>
+                            <td>Jméno správce vozidla</td>
+                        </tr>
+                    </table>
+                </section>
+                <section id="zaver">
+                    <h2 style="text-decoration:bold;">Závěr</h2>    
+                    <p>
+                       Projekt mi poskytl užitečný vhled do světa značkovacích jazyků, které ve své pracovní náplni ani zdaleka nevyužívám tak, jak by bylo potřeba. V patičce je k nalezení odkaz na GitHub projektu.
+                    </p>
+                </section>
+            </article>
+        </main>
+        <footer id="zapati" style="border-top:18px solid black;">
+            <a href="https://github.com/danpavelka/Znackovaci_jazyky">Daniel Pavelka Github</a>
+        </footer>         
+    </body>
+</html>
