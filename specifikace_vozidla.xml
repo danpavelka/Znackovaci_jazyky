@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <specifikace_vozidla> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="specifikace_vozidla.xsd"
 <vozidlo>
-    <Vyrobce>Skoda</Vyrobce>
+    <Vyrobce>
+        <znacka>Skoda</znacka>
+        <koncern>VW</koncern>
+    </Vyrobce>
+    
     <Typ>
         <jmeno>Octavia</jmeno>
         <typ_karoserie>Sedan</typ_karoserie>
@@ -59,12 +63,17 @@
     
     <Brzdy>
         <typ_brzd>Kotoucove</typ_brzd>
+        <disku_na_kolo>2</disku_na_kolo>
+        <posilovac typ="Dual Rate">Podtlakovy</posilovac>
+        <trmeny>Jednopistove</trmeny>
+        <propojeni>Diagonalni</propojeni>
     </Brzdy>
     
     <Kola>
         <standardni_kola rozmer="16">Ne</standardni_kola>
         <nadstandardni_kola rozmer="18">Ano</nadstandardni_kola>
         <material>Lehka slitina</material>
+        <pouzivany_rozmer>18</pouzivany_rozmer>
     </Kola>
     
     <Cenik>
@@ -79,7 +88,8 @@
         <ujeto jednotky="km">30124</ujeto>
         <rok_vyroby>2016</rok_vyroby>
         <bourano>Ne</bourano>
-        <osobni_vlastnictvi>Ne</osobni_vlastnictvi>
+        <osobni_sluzebni>Sluzebni</osobni_sluzebni>
+        <spravce>Asterix Obelix</spravce>
     </Dodatecne_informace>
     
 </vozidlo>
