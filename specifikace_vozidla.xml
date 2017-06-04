@@ -36,32 +36,51 @@
         <max_rychlost jednotky="km/h">229</max_rychlost>
         <zrychleni rozmezi="0-100km/h">7,3</zrychleni>
         <pocet_stupnu typ_prevodovky="manualni">6</pocet_stupnu>
-        <spojka typ_ovladani="hydraulicky">Jednokotoucova</spojka>
+        <spojka typ_ovladani="hydraulicke">Jednokotoucova</spojka>
         <nahon pocet_pohanenych_kol="2">Predni kola</nahon>        
     </Motor>
     
     <Vybava>
-        
+        <typ_vybavy>Style</typ_vybavy>
+        <barva_interieru>Cerna</barva_interieru>
+        <signalizace_pri_parkovani>Ano</signalizace_pri_parkovani>
+        <klimatizace vyrobce="Climatronic">Dvouzonova</klimatizace>
+        <tempomat>Ano</tempomat>
+        <vyhrivani_sedadel>Predni</vyhrivani_sedadel>
+        <typ_svetlometu>LED</typ_svetlometu>
+        <autoradio>Ano</autoradio>
+        <palubni_pocitac>Ano</palubni_pocitac>
+        <abs>Ano</abs>
+        <asr>Ano</asr>
+        <esp>Ano</esp>
+        <tazne_zarizeni nadstandard="ano">Ano</tazne_zarizeni>
+        <mlhovky nadstandard="ano">Ano</mlhovky>
+        <lane_assist nadstandard="ano">Ano</lane_assist>
     </Vybava>
     
     <Brzdy>
-        
+        <typ_brzd>Kotoucove</typ_brzd>
     </Brzdy>
     
     <Kola>
-        
+        <standardni_kola rozmer="16">Ne</standardni_kola>
+        <nadstandardni_kola rozmer="18">Ano</nadstandardni_kola>
+        <material>Lehka slitina</material>
     </Kola>
     
     <Cenik>
-        
+        <celkova_cena mena="Kc">752300</celkova_cena>
+        <cena_nadstandardni_vybavy mena="Kc">29900</cena_nadstandardni_vybavy>
+        <cena_metalicke_barvy mena="Kc">14700</cena_metalicke_barvy>
+        <cena_kol>12800</cena_kol>
+        <na_splatky>Ano</na_splatky>
     </Cenik>
     
-    <Zapujceni>
-        
-    </Zapujceni>
-    
     <Dodatecne_informace>
-        
+        <ujeto jednotky="km">30124</ujeto>
+        <rok_vyroby>2016</rok_vyroby>
+        <bourano>Ne</bourano>
+        <osobni_vlastnictvi>Ne</osobni_vlastnictvi>
     </Dodatecne_informace>
     
 </vozidlo>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-  <xs:element name="pujcovna_vozidel">
+  <xs:element name="specifikace_vozidla">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="vozidlo"/>
@@ -18,7 +18,6 @@
         <xs:element ref="Brzdy"/>
         <xs:element ref="Kola"/>
         <xs:element ref="Cenik"/>
-        <xs:element ref="Zapujceni"/>
         <xs:element ref="Dodatecne_informace"/>
       </xs:sequence>
     </xs:complexType>
@@ -235,21 +234,169 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="Vybava">
-    <xs:complexType/>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="typ_vybavy"/>
+        <xs:element ref="barva_interieru"/>
+        <xs:element ref="signalizace_pri_parkovani"/>
+        <xs:element ref="klimatizace"/>
+        <xs:element ref="tempomat"/>
+        <xs:element ref="vyhrivani_sedadel"/>
+        <xs:element ref="typ_svetlometu"/>
+        <xs:element ref="autoradio"/>
+        <xs:element ref="palubni_pocitac"/>
+        <xs:element ref="abs"/>
+        <xs:element ref="asr"/>
+        <xs:element ref="esp"/>
+        <xs:element ref="tazne_zarizeni"/>
+        <xs:element ref="mlhovky"/>
+        <xs:element ref="lane_assist"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="typ_vybavy" type="xs:NCName"/>
+  <xs:element name="barva_interieru" type="xs:NCName"/>
+  <xs:element name="signalizace_pri_parkovani" type="xs:NCName"/>
+  <xs:element name="klimatizace">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="vyrobce" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tempomat" type="xs:NCName"/>
+  <xs:element name="vyhrivani_sedadel" type="xs:NCName"/>
+  <xs:element name="typ_svetlometu" type="xs:NCName"/>
+  <xs:element name="autoradio" type="xs:NCName"/>
+  <xs:element name="palubni_pocitac" type="xs:NCName"/>
+  <xs:element name="abs" type="xs:NCName"/>
+  <xs:element name="asr" type="xs:NCName"/>
+  <xs:element name="esp" type="xs:NCName"/>
+  <xs:element name="tazne_zarizeni">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="nadstandard" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mlhovky">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="nadstandard" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lane_assist">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="nadstandard" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
   </xs:element>
   <xs:element name="Brzdy">
-    <xs:complexType/>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="typ_brzd"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
+  <xs:element name="typ_brzd" type="xs:NCName"/>
   <xs:element name="Kola">
-    <xs:complexType/>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="standardni_kola"/>
+        <xs:element ref="nadstandardni_kola"/>
+        <xs:element ref="material"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
+  <xs:element name="standardni_kola">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="rozmer" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nadstandardni_kola">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="rozmer" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="material" type="xs:string"/>
   <xs:element name="Cenik">
-    <xs:complexType/>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="celkova_cena"/>
+        <xs:element ref="cena_nadstandardni_vybavy"/>
+        <xs:element ref="cena_metalicke_barvy"/>
+        <xs:element ref="cena_kol"/>
+        <xs:element ref="na_splatky"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
-  <xs:element name="Zapujceni">
-    <xs:complexType/>
+  <xs:element name="celkova_cena">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="mena" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
   </xs:element>
+  <xs:element name="cena_nadstandardni_vybavy">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="mena" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cena_metalicke_barvy">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="mena" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cena_kol" type="xs:integer"/>
+  <xs:element name="na_splatky" type="xs:NCName"/>
   <xs:element name="Dodatecne_informace">
-    <xs:complexType/>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ujeto"/>
+        <xs:element ref="rok_vyroby"/>
+        <xs:element ref="bourano"/>
+        <xs:element ref="osobni_vlastnictvi"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
+  <xs:element name="ujeto">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="jednotky" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rok_vyroby" type="xs:integer"/>
+  <xs:element name="bourano" type="xs:NCName"/>
+  <xs:element name="osobni_vlastnictvi" type="xs:NCName"/>
 </xs:schema>
